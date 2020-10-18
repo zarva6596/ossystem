@@ -20,28 +20,35 @@
 
   &__heading {
     color: #fff;
-    font-size: 28px;
+    font-size: 20px;
     margin-right: 50px;
   }
 
   &__info {
     display: flex;
+    align-items: center;
   }
 
   &__item {
     margin-right: 20px;
     text-align: center;
+    font-weight: 300;
     color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.199);
 
     &Text {
-      font-size: 24px;
+      font-size: 20px;
+      margin-bottom: 0;
     }
   }
 
   &__button {
     display: block;
-    margin: 10px auto;
-    padding: 10px;
+    margin: 20px auto;
+    padding: 5px;
     width: 200px;
     border: 1px solid rgb(118, 134, 87);
     background-color: rgb(236, 255, 206);

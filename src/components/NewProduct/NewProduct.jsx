@@ -168,4 +168,5 @@ NewProduct.propTypes = {
     PropTypes.object.isRequired,
   ).isRequired,
   user: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };

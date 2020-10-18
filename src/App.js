@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
+
 import './App.scss';
 
 import { NewProduct } from './components/NewProduct';
@@ -7,59 +9,65 @@ import { Header } from './components/Header';
 import { Catalog } from './components/Catalog';
 import { Sitebar } from './components/Sitebar';
 
-import productsFromServer from './api/products.json';
+export const App = ({
+  products,
+  user,
+  changeUser,
+  deleteProduct,
+  removeProducts,
+  addProduct,
+}) => (
+  <>
+    <div
+      className="newPage"
+    >
+      <Header
+        user={user}
+        changeUser={changeUser}
+      />
 
-export const App = () => {
-  const [products, handleProducts] = useState(productsFromServer);
-  const [user, setUser] = useState('user');
+      <Sitebar
+        products={products}
+        user={user}
+        removeProducts={removeProducts}
+      />
 
-  const addProduct = (product) => {
-    handleProducts([...products, product]);
-  };
+      <Route
+        path="/catalog"
+        render={() => (
+          <Catalog
+            products={products}
+            user={user}
+            deleteProduct={deleteProduct}
+          />
+        )}
+      />
 
-  const removeProducts = () => handleProducts([]);
+      <Route
+        path="/addProduct"
+        render={() => (
+          <NewProduct
+            addProduct={addProduct}
+            products={products}
+            user={user}
+          />
+        )}
+      />
+    </div>
+  </>
+);
 
-  const deleteProduct = id => handleProducts([...products]
-    .filter(product => product.id !== id));
-
-  return (
-    <>
-      <div
-        className="newPage"
-      >
-        <Header
-          user={user}
-          setUser={setUser}
-        />
-        <Sitebar
-          products={products}
-          user={user}
-          removeProducts={removeProducts}
-        />
-
-        <Route
-          path="/catalog"
-          render={() => (
-            <Catalog
-              products={products}
-              user={user}
-              removeProducts={removeProducts}
-              deleteProduct={deleteProduct}
-            />
-          )}
-        />
-
-        <Route
-          path="/addProduct"
-          render={() => (
-            <NewProduct
-              addProduct={addProduct}
-              products={products}
-              user={user}
-            />
-          )}
-        />
-      </div>
-    </>
-  );
+App.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string,
+      imgUrl: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  user: PropTypes.string.isRequired,
+  changeUser: PropTypes.func.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
+  removeProducts: PropTypes.func.isRequired,
+  addProduct: PropTypes.func.isRequired,
 };

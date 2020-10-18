@@ -7,7 +7,6 @@ import { ProductCard } from '../ProductCard';
 export const Catalog = ({
   products,
   user,
-  removeProducts,
   deleteProduct,
 }) => (
   <div
@@ -37,6 +36,5 @@ Catalog.propTypes = {
     }),
   ).isRequired,
   user: PropTypes.string.isRequired,
-  removeProducts: PropTypes.func.isRequired,
   deleteProduct: PropTypes.func.isRequired,
 };

@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 import './Header.scss';
 
-export const Header = ({ user, setUser }) => (
+export const Header = ({ user, changeUser }) => (
   <div
     className="header"
   >
@@ -68,7 +68,7 @@ export const Header = ({ user, setUser }) => (
 
       <select
         value={user}
-        onChange={event => setUser(event.target.value)}
+        onChange={event => changeUser(event.target.value)}
       >
         <option
           value="admin"
@@ -88,5 +88,5 @@ export const Header = ({ user, setUser }) => (
 
 Header.propTypes = {
   user: PropTypes.string.isRequired,
-  setUser: PropTypes.func.isRequired,
+  changeUser: PropTypes.func.isRequired,
 };

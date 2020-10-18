@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 
 import './Sitebar.scss';
 
-export const Sitebar = ({ products, user, removeProducts }) => {
-  const [right, setRight] = useState(user === 'admin' ? '-720px' : '-520px');
+export const Sitebar = ({
+  products,
+  user,
+  removeProducts,
+}) => {
+  const [right, setRight] = useState(user === 'admin' ? '-800px' : '-600px');
 
   useEffect(() => (
-    setRight(user === 'admin' ? '-720px' : '-520px')
+    setRight(user === 'admin' ? '-800px' : '-600px')
   ), [user]);
 
   const goods = products.length;
@@ -21,7 +25,7 @@ export const Sitebar = ({ products, user, removeProducts }) => {
       }}
       className="sitebar"
       onMouseEnter={() => setRight(null)}
-      onMouseLeave={() => setRight(user === 'admin' ? '-720px' : '-520px')}
+      onMouseLeave={() => setRight(user === 'admin' ? '-800px' : '-600px')}
     >
       <div className="sitebar__heading">
         <h1>Info</h1>
