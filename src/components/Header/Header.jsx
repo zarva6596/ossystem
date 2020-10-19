@@ -13,7 +13,7 @@ export const Header = ({ user, changeUser }) => (
       className="header__logo-link"
     >
       <img
-        src="/images/x.png"
+        src="/images/logo.png"
         className="header__logo"
         alt="Logo"
       />
