@@ -13,7 +13,7 @@ export const Header = ({ user, changeUser }) => (
       className="header__logo-link"
     >
       <img
-        src="ossystem/images/logo.png"
+        src="images/logo.png"
         className="header__logo"
         alt="Logo"
       />
