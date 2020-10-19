@@ -22,7 +22,7 @@ export const ProductCard = ({
         : 'card__removeProduct--none'}
       onClick={() => deleteProduct(id)}
     >
-      <img src="/images/x.png" alt="remove button" />
+      <img src="images/x.png" alt="remove button" />
     </button>
     <div
       className="card__imgBlock"
