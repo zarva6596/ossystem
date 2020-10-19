@@ -1,11 +1,11 @@
 .newProduct {
    padding: 50px 20%;
    text-align: center;
- 
+
    &__heading {
      font-size: 24px;
      margin: 10px;
- 
+
      &--error {
        font-size: 40px;
        color: red;
@@ -13,7 +13,7 @@
      }
    }
  }
- 
+
  .form {
    width: fit-content;
    margin: 0 auto;
@@ -22,26 +22,22 @@
    align-items: flex-end;
    padding: 15px;
    box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
- 
+
    &__or {
      width: 100%;
      text-align: center;
      font-style: italic;
    }
- 
+
    &__lable {
      margin: 10px;
      display: block;
    }
- 
+
    &__input {
-     padding: 10px;
-     margin-left: 20px;
-     border-radius: 5px;
-     border: 1px solid rgb(118, 134, 87);
-     background-color: rgb(243, 255, 225);
+     margin: 20px;
    }
- 
+
    &__button {
      display: block;
      margin: 10px auto;
@@ -51,7 +47,7 @@
      font-size: 20px;
      border-radius: 5px;
      color: rgb(118, 134, 87);
- 
+
      &:hover {
        cursor: pointer;
        font-weight: 500;

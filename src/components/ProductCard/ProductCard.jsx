@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Box, Typography } from '@material-ui/core';
+
 import './ProductCard.scss';
 
 export const ProductCard = ({
@@ -24,48 +26,81 @@ export const ProductCard = ({
     >
       <img src="images/x.png" alt="remove button" />
     </button>
-    <div
-      className="card__imgBlock"
+    <Box
+      style={{
+        textAlign: 'center',
+        height: '250px',
+        width: '100%',
+        padding: '10px',
+        overflow: 'hidden',
+      }}
     >
       <img
         className="card__image"
         src={imgUrl}
         alt={title}
       />
-    </div>
+    </Box>
 
-    <div
-      className="card__infoBlock"
+    <Box
+      style={{
+        backgroundColor: 'rgba(208, 255, 255, 0.788)',
+        padding: '0 10px',
+      }}
     >
-      <div className="card__heading">
-        <h2
-          className="card__header"
+      <Box
+        style={{
+          padding: '10px 0',
+        }}
+      >
+        <Typography
+          variant="h4"
         >
           {title}
-        </h2>
-      </div>
+        </Typography>
+      </Box>
 
-      <div className="card__info">
-        <p
-          className="card__description"
+      <Box
+        style={{
+          padding: '10px 0',
+        }}
+      >
+        <Typography
+          variant="overline"
+        >
+          id:
+          {id}
+        </Typography>
+      </Box>
+
+      <Box
+        style={{
+          textAlign: 'justify',
+          paddingLeft: '30px',
+          height: '100px',
+          overflow: 'hidden',
+        }}
+      >
+        <Typography
+          variant="body1"
         >
           {description}
-        </p>
-        <p
-          className="card__id"
-        >
-          {id}
-        </p>
-      </div>
+        </Typography>
+      </Box>
 
-      <div className="card__priceBlock">
-        <p
-          className="card__price"
+      <Box
+        style={{
+          textAlign: 'right',
+          padding: '30px',
+        }}
+      >
+        <Typography
+          variant="h5"
         >
           {`$${price}`}
-        </p>
-      </div>
-    </div>
+        </Typography>
+      </Box>
+    </Box>
   </div>
 );
 

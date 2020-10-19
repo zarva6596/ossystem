@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import { makeStyles } from '@material-ui/core/styles';
+import {
+  Button,
+  IconButton,
+  TextField,
+  Typography,
+} from '@material-ui/core';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
+
 import './NewProduct.scss';
 
 export const NewProduct = ({ addProduct, products, user }) => {
@@ -57,6 +66,18 @@ export const NewProduct = ({ addProduct, products, user }) => {
     });
   };
 
+  const useStyles = makeStyles(theme => ({
+    form: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: '25ch',
+        boxShadow: '0 0 15px 0 rgba(0,0,0,0.1)',
+      },
+    },
+  }));
+
+  const classes = useStyles();
+
   return (
     <div
       className="newProduct"
@@ -64,88 +85,99 @@ export const NewProduct = ({ addProduct, products, user }) => {
       {user !== 'admin'
         ? (
           <>
-            <h2
-              className="newProduct__heading--error"
+            <Typography
+              variant="h2"
+              color="secondary"
+              gutterBottom
             >
               Sory but You can`t add products !!!
-            </h2>
+            </Typography>
           </>
         )
         : (
           <div>
-            <h2 className="newProduct__heading">Add new Product</h2>
+            <Typography
+              variant="h4"
+              gutterBottom
+            >
+              Add new Product
+            </Typography>
             <div
               className="newProduct__formBlock"
             >
               <form
-                className="newProduct__form form"
                 onSubmit={event => newProduct(event)}
+                className={classes.form}
+                autoComplete="off"
               >
-                <label className="form__lable">
-                  Title:
-                  <input
-                    name="title"
-                    className="form__input"
-                    placeholder="Title"
-                    type="text"
-                    value={title}
-                    onChange={event => hendleChange(event)}
-                    required
-                  />
-                </label>
-                <label className="form__lable">
-                  Description:
-                  <input
-                    name="description"
-                    className="form__input"
-                    placeholder="Description"
-                    type="text"
-                    value={description}
-                    onChange={event => hendleChange(event)}
-                    required
-                  />
-                </label>
-                <label className="form__lable">
-                  Price:
-                  <input
-                    name="price"
-                    className="form__input"
-                    placeholder="Product price"
-                    type="number"
-                    value={price}
-                    onChange={event => hendleChange(event)}
-                    required
-                  />
-                </label>
+                <TextField
+                  name="title"
+                  label="Title"
+                  variant="outlined"
+                  value={title}
+                  onChange={event => hendleChange(event)}
+                  required
+                />
+
+                <TextField
+                  name="price"
+                  label="Price"
+                  variant="outlined"
+                  type="number"
+                  value={price}
+                  onChange={event => hendleChange(event)}
+                  style={{ width: '100px' }}
+                  required
+                />
+
+                <TextField
+                  name="description"
+                  label="Description"
+                  variant="outlined"
+                  multiline
+                  rows={4}
+                  type="text"
+                  value={description}
+                  onChange={event => hendleChange(event)}
+                  style={{ width: '100%' }}
+                  required
+                />
+
                 <label className="form__lable">
                   Upload photo:
                   <input
-                    name="photo"
-                    className="form__input"
                     type="file"
                     onChange={event => handlePhoto(event)}
+                    style={{ display: 'none' }}
                   />
+                  <IconButton
+                    color="primary"
+                    aria-label="upload picture"
+                    component="span"
+                  >
+                    <PhotoCamera />
+                  </IconButton>
+                  or write Image adress here:
                 </label>
-                <p className="form__or">
-                  or write Image adress here
-                </p>
-                <label className="form__lable">
-                  Image adress:
-                  <input
+                <div>
+                  <TextField
                     name="imgUrl"
-                    className="form__input"
-                    placeholder="image URL"
+                    variant="outlined"
+                    title="image URL"
                     type="url"
                     value={imgUrl}
                     onChange={event => hendleChange(event)}
                   />
-                </label>
-                <button
+                </div>
+
+                <Button
+                  variant="contained"
+                  color="primary"
                   className="form__button"
                   type="submit"
                 >
                   Send
-                </button>
+                </Button>
               </form>
             </div>
           </div>

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { createStore, bindActionCreators } from 'redux';
 import { connect, Provider } from 'react-redux';
 
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './App';
 
@@ -92,9 +92,9 @@ ReactDOM.render(
   <Provider
     store={store}
   >
-    <HashRouter>
+    <BrowserRouter basename="ossystem">
       <WrappedApp />
-    </HashRouter>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root'),
 );
