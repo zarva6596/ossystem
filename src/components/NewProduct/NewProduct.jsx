@@ -24,7 +24,7 @@ export const NewProduct = ({ addProduct, products, user }) => {
 
   const { title, description, imgUrl, price } = product;
 
-  const id = products.length;
+  const id = `${products.length + 1}`;
 
   const hendleChange = (event) => {
     const { name, value } = event.target;
@@ -52,10 +52,24 @@ export const NewProduct = ({ addProduct, products, user }) => {
     reader.readAsDataURL(file);
   };
 
+  const addLocalProduct = () => {
+    const { data } = localStorage;
+
+    const localProducts = data
+      ? JSON.parse(data)
+      : [];
+
+    localProducts.push(product);
+
+    localStorage.setItem('data',
+      JSON.stringify(localProducts));
+  };
+
   const newProduct = (event) => {
     event.preventDefault();
 
     addProduct(product);
+    addLocalProduct();
 
     createProduct({
       id: '',
