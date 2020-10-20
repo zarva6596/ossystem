@@ -46,21 +46,7 @@
   }
 
   &__button {
-    font-family: 'Roboto', sans-serif;
     color: #fff;
-    background-color: #326EAA;
-    font-size: 14px;
-    text-transform: uppercase;
-    border: 0;
-    border-radius: 30px;
-    padding: 15px 10px;
-    transition: background-color 0.5s;
-    margin-left: 20px;
-
-    &:hover {
-      cursor: pointer;
-      background-color: #2B5E91;
-    }
   }
 }
 

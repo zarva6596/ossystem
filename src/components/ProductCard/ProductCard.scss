@@ -39,8 +39,43 @@
      transform: scale(1.2) rotate(10deg);
    }
 
+   &__imageBox {
+    text-align: center;
+    height: 250px;
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
+   }
+
    &__image {
      height: 200px;
      transition: transform 0.7s;
+   }
+
+   &__infoBox {
+    background-color: rgba(208, 255, 255, 0.788);
+    padding: 0 10px;
+   }
+ }
+
+ .infoBox {
+   &__heading {
+    padding: 10px 0;
+   }
+
+   &__id {
+    padding: 10px 0;
+   }
+
+   &__description {
+    text-align: justify;
+    padding-left: 30px;
+    height: 100px;
+    overflow: hidden;
+   }
+
+   &__price {
+    text-align: right;
+    padding: 30px;
    }
  }

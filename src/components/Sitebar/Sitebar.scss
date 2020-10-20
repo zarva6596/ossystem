@@ -1,87 +1,71 @@
-.sitebar {
-   z-index: 2;
-   position: fixed;
-   top: 150px;
-   display: flex;
-   align-items: center;
-   background-color: #326EAA;
-   border-radius: 50px 0 0 50px;
-   padding: 0 30px;
-   transition: padding 0.5s, right 0.5s;
-   letter-spacing: 2px;
-   box-shadow: 20px 22px 23px -15px rgba(0,0,0,0.75),
-     inset 0 0 19px 3px rgba(0, 64, 107, 0.75);
+.siteBar {
+  z-index: 2;
+  position: fixed;
+  top: 150px;
+  display: flex;
+  align-items: center;
+  background-color: #326EAA;
+  border-radius: 50px 0 0 50px;
+  padding: 0 30px;
+  transition: padding 0.5s, right 0.5s;
+  letter-spacing: 2px;
+  box-shadow: 20px 22px 23px -15px rgba(0,0,0,0.75),
+    inset 0 0 19px 3px rgba(0, 64, 107, 0.75);
 
-   &:hover {
-     right: -10px;
-     padding: 30px;
-     border-radius: 100px 0 0 100px;
-   }
+  &:hover {
+    right: -10px;
+    padding: 30px;
+    border-radius: 100px 0 0 100px;
+  }
 
-   &__heading {
-     color: #fff;
-     font-size: 20px;
-     margin-right: 50px;
-   }
+  &__heading {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 50px;
+  }
 
-   &__info {
-     display: flex;
-     align-items: center;
-   }
+  &__info {
+    display: flex;
+    align-items: center;
+  }
 
-   &__item {
-     margin-right: 20px;
-     text-align: center;
-     font-weight: 300;
-     color: #fff;
-     font-size: 14px;
-     padding: 5px 10px;
-     border-radius: 15px;
-     background-color: rgba(255, 255, 255, 0.199);
+  &__item {
+    margin-right: 20px;
+    text-align: center;
+    font-weight: 300;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.199);
 
-     &Text {
-       font-size: 20px;
-       margin-bottom: 0;
-     }
-   }
+    &Text {
+      font-size: 20px;
+      margin-bottom: 0;
+    }
+  }
 
-   &__button {
-     display: block;
-     margin: 20px auto;
-     padding: 5px;
-     width: 200px;
-     border: 1px solid rgb(118, 134, 87);
-     background-color: rgb(236, 255, 206);
-     font-size: 20px;
-     border-radius: 5px;
-     color: rgb(118, 134, 87);
+  &__button {
+    display: block;
 
-     &--none {
-       display: none;
-     }
-
-     &:hover {
-       cursor: pointer;
-       font-weight: 500;
-       color: rgb(77, 92, 49);
-       border-color: rgb(77, 92, 49);
-       box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
-     }
-   }
- }
-
- .mobileSitebar {
-  display: none;
+    &--none {
+      display: none;
+    }
+  }
 }
 
- @media (max-width: 770px) {
-   .sitebar {
-     display: none;
-   }
+.mobileSiteBar {
+ display: none;
+}
 
-   .mobileSitebar {
-     padding: 100px 15% 0;
-     display: block;
-     text-align: center;
-   }
- }
+@media (max-width: 770px) {
+  .siteBar {
+    display: none;
+  }
+
+  .mobileSiteBar {
+    padding: 100px 15% 0;
+    display: block;
+    text-align: center;
+  }
+}
