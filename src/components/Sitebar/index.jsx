@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { bindActionCreators } from 'redux';
@@ -17,6 +17,10 @@ const SiteBar = ({
 }) => {
   const position = `${user === 'admin' ? '-750px' : '-550px'}`;
   const [right, setRight] = useState(position);
+
+  useEffect(() => (
+    setRight(position)
+  ), [position, user]);
 
   const goods = products.length;
   const total = products.reduce((acc, product) => acc + +product.price, 0);
@@ -49,7 +53,7 @@ const SiteBar = ({
           variant="contained"
           color="secondary"
           type="button"
-          onClick={() => removeProducts()}
+          onClick={() => removeAllProducts()}
         >
           Delete all products
         </Button>
