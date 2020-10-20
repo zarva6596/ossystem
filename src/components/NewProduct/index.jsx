@@ -135,7 +135,7 @@ const NewProduct = ({ addNewProduct, products, user }) => {
                   type="number"
                   value={price}
                   onChange={handleChange}
-                  style={{ width: '100px' }}
+                  className="form__input"
                   required
                 />
 
@@ -148,7 +148,7 @@ const NewProduct = ({ addNewProduct, products, user }) => {
                   type="text"
                   value={description}
                   onChange={handleChange}
-                  style={{ width: '100%' }}
+                  fullWidth
                   required
                 />
 
@@ -200,7 +200,6 @@ const useStyles = makeStyles(theme => ({
   form: {
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
-      width: '25ch',
       boxShadow: '0 0 15px 0 rgba(0,0,0,0.1)',
     },
   },
