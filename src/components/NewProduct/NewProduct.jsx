@@ -26,7 +26,7 @@ export const NewProduct = ({ addProduct, products, user }) => {
 
   const id = `${products.length + 1}`;
 
-  const hendleChange = (event) => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
 
     createProduct({
@@ -80,16 +80,6 @@ export const NewProduct = ({ addProduct, products, user }) => {
     });
   };
 
-  const useStyles = makeStyles(theme => ({
-    form: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        width: '25ch',
-        boxShadow: '0 0 15px 0 rgba(0,0,0,0.1)',
-      },
-    },
-  }));
-
   const classes = useStyles();
 
   return (
@@ -104,7 +94,7 @@ export const NewProduct = ({ addProduct, products, user }) => {
               color="secondary"
               gutterBottom
             >
-              Sory but You can`t add products !!!
+              Sorry but You can`t add products !!!
             </Typography>
           </>
         )
@@ -129,7 +119,7 @@ export const NewProduct = ({ addProduct, products, user }) => {
                   label="Title"
                   variant="outlined"
                   value={title}
-                  onChange={event => hendleChange(event)}
+                  onChange={handleChange}
                   required
                 />
 
@@ -139,7 +129,7 @@ export const NewProduct = ({ addProduct, products, user }) => {
                   variant="outlined"
                   type="number"
                   value={price}
-                  onChange={event => hendleChange(event)}
+                  onChange={handleChange}
                   style={{ width: '100px' }}
                   required
                 />
@@ -152,17 +142,17 @@ export const NewProduct = ({ addProduct, products, user }) => {
                   rows={4}
                   type="text"
                   value={description}
-                  onChange={event => hendleChange(event)}
+                  onChange={handleChange}
                   style={{ width: '100%' }}
                   required
                 />
 
-                <label className="form__lable">
+                <label className="form__label">
                   Upload photo:
                   <input
                     type="file"
-                    onChange={event => handlePhoto(event)}
-                    style={{ display: 'none' }}
+                    onChange={handlePhoto}
+                    className="form__input--none"
                   />
                   <IconButton
                     color="primary"
@@ -171,7 +161,7 @@ export const NewProduct = ({ addProduct, products, user }) => {
                   >
                     <PhotoCamera />
                   </IconButton>
-                  or write Image adress here:
+                  or write Image address here:
                 </label>
                 <div>
                   <TextField
@@ -180,7 +170,7 @@ export const NewProduct = ({ addProduct, products, user }) => {
                     title="image URL"
                     type="url"
                     value={imgUrl}
-                    onChange={event => hendleChange(event)}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -200,6 +190,16 @@ export const NewProduct = ({ addProduct, products, user }) => {
     </div>
   );
 };
+
+const useStyles = makeStyles(theme => ({
+  form: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '25ch',
+      boxShadow: '0 0 15px 0 rgba(0,0,0,0.1)',
+    },
+  },
+}));
 
 NewProduct.propTypes = {
   addProduct: PropTypes.func.isRequired,

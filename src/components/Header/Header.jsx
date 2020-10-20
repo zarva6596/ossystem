@@ -22,18 +22,20 @@ export const Header = ({ changeUser }) => {
     setAnchorUser(null);
   };
 
+  const top = `${show ? '0' : '-100%'}`;
+
   return (
     <>
       <div
         className="mobile"
         style={{
-          top: `${show ? '0' : '-100%'}`,
+          top,
         }}
       >
         <ul
           className="mobile__list"
           style={{
-            top: `${show ? '0' : '-100%'}`,
+            top,
           }}
         >
           <li
@@ -92,7 +94,7 @@ export const Header = ({ changeUser }) => {
           <ul
             className="nav__list"
             style={{
-              top: `${show ? '0' : '-100%'}`,
+              top,
             }}
           >
             <li
@@ -131,10 +133,7 @@ export const Header = ({ changeUser }) => {
           </ul>
 
           <div
-            style={{
-              marginLeft: '20px',
-              color: 'white',
-            }}
+            className="nav__button"
           >
             <IconButton
               edge="start"
@@ -147,13 +146,11 @@ export const Header = ({ changeUser }) => {
           </div>
 
           <div
-            style={{
-              color: 'white',
-            }}
+            className="nav__button"
           >
             <IconButton
               aria-label="account of current user"
-              aria-controls="menu-appbar"
+              aria-controls="menu-appBar"
               aria-haspopup="true"
               onClick={handleUserMenu}
               color="inherit"
@@ -163,7 +160,7 @@ export const Header = ({ changeUser }) => {
           </div>
 
           <Menu
-            id="menu-appbar"
+            id="menu-appBar"
             anchorEl={anchorUser}
             anchorOrigin={{
               vertical: 'top',

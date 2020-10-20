@@ -27,13 +27,7 @@ export const ProductCard = ({
       <img src="images/x.png" alt="remove button" />
     </button>
     <Box
-      style={{
-        textAlign: 'center',
-        height: '250px',
-        width: '100%',
-        padding: '10px',
-        overflow: 'hidden',
-      }}
+      className="card__imageBox"
     >
       <img
         className="card__image"
@@ -43,15 +37,10 @@ export const ProductCard = ({
     </Box>
 
     <Box
-      style={{
-        backgroundColor: 'rgba(208, 255, 255, 0.788)',
-        padding: '0 10px',
-      }}
+      className="card__infoBox infoBox"
     >
       <Box
-        style={{
-          padding: '10px 0',
-        }}
+        className="infoBox__heading"
       >
         <Typography
           variant="h4"
@@ -61,9 +50,7 @@ export const ProductCard = ({
       </Box>
 
       <Box
-        style={{
-          padding: '10px 0',
-        }}
+        className="infoBox__id"
       >
         <Typography
           variant="overline"
@@ -74,12 +61,7 @@ export const ProductCard = ({
       </Box>
 
       <Box
-        style={{
-          textAlign: 'justify',
-          paddingLeft: '30px',
-          height: '100px',
-          overflow: 'hidden',
-        }}
+        className="infoBox__description"
       >
         <Typography
           variant="body1"
@@ -89,10 +71,7 @@ export const ProductCard = ({
       </Box>
 
       <Box
-        style={{
-          textAlign: 'right',
-          padding: '30px',
-        }}
+        className="infoBox__price"
       >
         <Typography
           variant="h5"

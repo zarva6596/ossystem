@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { Typography, Button } from '@material-ui/core';
 
-import './Sitebar.scss';
+import './SiteBar.scss';
 
-export const Sitebar = ({
+export const SiteBar = ({
   products,
   user,
   removeProducts,
@@ -22,7 +22,7 @@ export const Sitebar = ({
 
   return (
     <>
-      <div className="mobileSitebar">
+      <div className="mobileSiteBar">
         <Typography variant="h6">
           {`${goods} `}
           products in catalog.
@@ -54,11 +54,11 @@ export const Sitebar = ({
         style={{
           right,
         }}
-        className="sitebar"
+        className="siteBar"
         onMouseEnter={() => setRight(null)}
         onMouseLeave={() => setRight(user === 'admin' ? '-750px' : '-550px')}
       >
-        <div className="sitebar__heading">
+        <div className="siteBar__heading">
           <Typography
             variant="h4"
           >
@@ -67,27 +67,27 @@ export const Sitebar = ({
         </div>
 
         <div
-          className="sitebar__info"
+          className="siteBar__info"
         >
           <div
-            className="sitebar__item"
+            className="siteBar__item"
           >
             <Typography variant="h6">Quantity of goods:</Typography>
-            <p className="sitebar__itemText">{goods}</p>
+            <p className="siteBar__itemText">{goods}</p>
           </div>
 
           <div
-            className="sitebar__item"
+            className="siteBar__item"
           >
             <Typography variant="h6">Total price:</Typography>
-            <p className="sitebar__itemText">{`$${total}`}</p>
+            <p className="siteBar__itemText">{`$${total}`}</p>
           </div>
 
           <div
-            className="sitebar__item"
+            className="siteBar__item"
           >
             <Typography variant="h6">Average price:</Typography>
-            <p className="sitebar__itemText">{`$${average}`}</p>
+            <p className="siteBar__itemText">{`$${average}`}</p>
           </div>
 
           <Button
@@ -98,8 +98,8 @@ export const Sitebar = ({
             color="secondary"
             type="button"
             className={user === 'admin'
-              ? 'sitebar__button'
-              : 'sitebar__button--none'}
+              ? 'siteBar__button'
+              : 'siteBar__button--none'}
             onClick={() => removeProducts()}
           >
             Delete all products
@@ -110,7 +110,7 @@ export const Sitebar = ({
   );
 };
 
-Sitebar.propTypes = {
+SiteBar.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,

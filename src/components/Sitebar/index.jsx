@@ -1,1 +1,1 @@
-export * from './Sitebar';
+export * from './SiteBar';

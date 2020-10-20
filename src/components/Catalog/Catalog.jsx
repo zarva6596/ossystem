@@ -5,8 +5,9 @@ import { NavLink } from 'react-router-dom';
 
 import { Typography, Button, Box } from '@material-ui/core';
 
-import './Catalog.scss';
 import { ProductCard } from '../ProductCard';
+
+import './Catalog.scss';
 
 export const Catalog = ({
   products,
@@ -17,10 +18,11 @@ export const Catalog = ({
     {products.length === 0
       ? (
         <Box
-          style={{
-            textAlign: 'center',
-            padding: '50px 0',
-          }}
+          className="catalog__error"
+          // style={{
+          //   textAlign: 'center',
+          //   padding: '50px 0',
+          // }}
         >
           <Typography
             variant="h5"
@@ -34,14 +36,11 @@ export const Catalog = ({
             color="primary"
             gutterBottom
           >
-            You can add a new product
+            {`You can add a new product `}
             <NavLink
               to="/addProduct"
             >
               <Button
-                style={{
-                  marginLeft: '20px',
-                }}
                 variant="contained"
                 color="primary"
               >

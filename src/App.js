@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
-
-import './App.scss';
+import { Route, Switch } from 'react-router-dom';
 
 import { NewProduct } from './components/NewProduct';
 import { Header } from './components/Header';
 import { Catalog } from './components/Catalog';
-import { Sitebar } from './components/Sitebar';
+import { SiteBar } from './components/SiteBar';
+
+import './App.scss';
 
 export const App = ({
   products,
@@ -26,33 +26,33 @@ export const App = ({
         changeUser={changeUser}
       />
 
-      <Sitebar
+      <SiteBar
         products={products}
         user={user}
         removeProducts={removeProducts}
       />
 
-      <Route
-        path="/catalog"
-        render={() => (
+      <Switch>
+        <Route
+          path="/catalog"
+        >
           <Catalog
             products={products}
             user={user}
             deleteProduct={deleteProduct}
           />
-        )}
-      />
+        </Route>
 
-      <Route
-        path="/addProduct"
-        render={() => (
+        <Route
+          path="/addProduct"
+        >
           <NewProduct
             addProduct={addProduct}
             products={products}
             user={user}
           />
-        )}
-      />
+        </Route>
+      </Switch>
     </div>
   </>
 );
